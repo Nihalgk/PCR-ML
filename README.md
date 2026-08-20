@@ -54,3 +54,11 @@ The model handles rapid thermal cycling (95°C Denaturation ↔ 60°C Annealing 
 
 ## 🚀 Next Steps
 Once the Stage 1 validation confirms acceptable error bounds across varying ambient conditions, the physical `T_IN` thermocouple will be permanently removed (Stage 2), resulting in a cheaper, simpler, and fully sensorless PCR architecture!
+
+## ⚖️ Disclaimer & Usage Rights
+
+**Notice:** This repository and its contents are part of a personal, independent laboratory research project. 
+
+All hardware designs, firmware code, dataset logs, machine learning models, and analytical scripts presented here are original intellectual property. **Please do not copy, reproduce, distribute, or use this data or code for commercial or academic purposes without explicit prior permission.** 
+
+This project is shared publicly for portfolio and demonstration purposes only. The provided code is offered "as-is" without any warranties regarding its safety or efficacy in a clinical or diagnostic setting.
