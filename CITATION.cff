@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, datasets, or hardware architecture in your research, please cite it as below."
+authors:
+  - family-names: "G K"
+    given-names: "Nihal"
+title: "PCR-ML: Embedded Machine Learning Thermal Lag Compensation & Sensorless Control for Open-Source IR-LED PCR Thermocyclers"
+version: 1.0.0
+date-released: 2026-08-20
+url: "https://github.com/Nihalgk/PCR-ML"
+keywords:
+  - polymerase chain reaction
+  - thermocycler
+  - embedded machine learning
+  - thermal lag compensation
+  - edge computing
+  - arduino
+  - sensorless control

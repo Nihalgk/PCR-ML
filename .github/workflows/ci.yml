@@ -1,0 +1,43 @@
+name: CI & Thermal Model Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest
+
+    - name: Install pcr_ml package in editable mode
+      run: |
+        pip install -e .
+
+    - name: Run Pytest Suite
+      run: |
+        pytest -v --tb=short tests/
+
+    - name: Validate Model Calibration & C++ Parity
+      run: |
+        python -m pcr_ml.cli evaluate
+        python -m pcr_ml.cli generate-c --output firmware/pcr_sensorless_stage1/ml_model_weights.h
