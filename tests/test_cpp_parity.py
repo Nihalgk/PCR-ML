@@ -15,7 +15,7 @@ from pcr_ml.models import PhaseSpecificPCRModel
 
 def test_cpp_floating_point_parity():
     repo_dir = Path(__file__).resolve().parents[1]
-    sample_file = repo_dir / "40 cycle(3step)_19.08.2026.txt"
+    sample_file = repo_dir / "data" / "40 cycle(3step)_19.08.2026.txt"
     df = parse_pcr_file(sample_file)
     df_feat = engineer_features(df)
 
