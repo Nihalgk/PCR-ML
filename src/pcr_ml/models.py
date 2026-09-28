@@ -17,6 +17,7 @@ from .features import DEFAULT_FEATURES
 class PCRLinearModel(BaseEstimator, RegressorMixin):
     """
     Global Linear Regression model for real-time edge inference.
+    Designed for ultra-low latency execution on 8-bit microcontrollers.
     """
 
     def __init__(self, features: Optional[List[str]] = None, alpha: float = 0.0):
