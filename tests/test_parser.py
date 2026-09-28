@@ -9,7 +9,11 @@ import pytest
 from pcr_ml.parser import parse_pcr_file, load_all_runs
 
 
-def test_parse_sample_file(tmp_path):
+def test_parse_sample_file(tmp_path: Path):
+    """
+    Test parsing a standard PCR log file with typical output lines.
+    Verifies that the DataFrame structure and column types are correctly inferred.
+    """
     sample_content = """====================================================
 PCR: S2 CONTROL
 Time, Cycle, Phase, T_OUT, T_IN, F T_IN, LED PWM, Status
